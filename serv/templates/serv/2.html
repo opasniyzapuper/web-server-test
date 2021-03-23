@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <p align="center"><b>Your IP address:</b></p>
+    <p align="center">{{ip}}</p>
+    <p align="center"><b>Your system information and browser info:</b></p>
+    <p align="center">{{user_info}}</p>
+    <p align="center"><b>Your resolution:</b></p>
+    <p align="center" id ="121"></p>
+    <p align="center"><b>Your language:</b></p>
+    <p align="center" id ="122"></p>
+    <p align="center"><b>Your browser:</b></p>
+    <p align="center" id ="123"></p>
+    <p align="center"><b>Your browser's version:</b></p>
+    <p align="center" id ="124"></p>
+    <p align="center"><b>Your browser's code name:</b></p>
+    <p align="center" id ="125"></p>
+    <p align="center"><b>Your platform:</b></p>
+    <p align="center" id ="126"></p>
+    <p align="center"><b>Cookie support:</b></p>
+    <p align="center" id ="127"></p>
+    <p align="center"><b>JavaScript support:</b></p>
+    <p align="center" id ="128"></p>
+    <p align="center"><a href="1">Back</a></p>
+    <img src="{%static '1.jpg'%}" align="right">
+    <script>
+    function getResol(){
+      var w = screen.width;
+      var h = screen.height;
+      var z = w + "x" + h;
+      z1 = document.getElementById('121');
+      z1.innerHTML = z;
+    }
+    getResol()
+    </script>
+    <script>
+      var userLang = navigator.language || navigator.userLanguage;
+      var Lang = userLang;
+      Lang1 = document.getElementById('122');
+      Lang1.innerHTML = Lang;
+    </script>
+    <script>
+      var name = navigator.appName;
+      name1 = document.getElementById('123');
+      name1.innerHTML = name;
+      var vers = navigator.appVersion;
+      vers1 = document.getElementById('124');
+      vers1.innerHTML = vers;
+      var code = navigator.appCodeName;
+      code1 = document.getElementById('125');
+      code1.innerHTML = code;
+      var platform = navigator.platform;
+      platform1 = document.getElementById('126');
+      platform1.innerHTML = platform;
+      var cook = navigator.cookieEnabled;
+      cook1 = document.getElementById('127');
+      cook1.innerHTML = cook;
+      var je = navigator.javaEnabled();
+      je1 = document.getElementById('128');
+      je1.innerHTML = je;
+    </script>
+  </body>
+</html>
